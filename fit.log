@@ -1,0 +1,185 @@
+
+
+*******************************************************************************
+Wed Dec 10 17:07:41 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt"
+        format = z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Wed Dec 10 17:07:54 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Dec 10 17:08:15 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Wed Dec 10 17:08:24 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Dec 10 17:08:33 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Dec 10 17:08:46 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a' is zero.
+Warning: Initial value of parameter 'b' is zero.
+Warning: Initial value of parameter 'c' is zero.
+
+
+*******************************************************************************
+Wed Dec 10 17:09:37 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Dec 10 17:09:45 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Wed Dec 10 17:09:48 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Dec 10 17:10:45 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x^2 + b*x + c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Dec 10 17:11:25 2025
+
+
+FIT:    data read from "ricercaMaaxP1.txt" using 1:2
+        format = x:z
+        #datapoints = 27
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**2 + b*x + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.5779644276e+18   0.00e+00  2.47e+08   -3.014000e+03   1.460000e+06   1.540000e+08
+   6 3.4125103161e+10  -3.88e-08  2.47e+03   -3.014233e+03   1.454785e+06  -1.537229e+08
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 3.41251e+10
+rel. change during last iteration : -3.8812e-13
+
+degrees of freedom    (FIT_NDF)                        : 24
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 37707.8
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.42188e+09
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3014.23         +/- 10.18        (0.3378%)
+b               = 1.45479e+06      +/- 4939         (0.3395%)
+c               = -1.53723e+08     +/- 5.968e+05    (0.3882%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.998  1.000 
+c               0.991 -0.998  1.000 
