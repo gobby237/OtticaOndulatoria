@@ -1,0 +1,166 @@
+
+
+*******************************************************************************
+Mon Dec 15 15:54:58 2025
+
+
+FIT:    data read from "SenzaFondo.txt" using 1:2
+        format = x:z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*cos(w*x + b)**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             w            
+   0 1.1827209977e+15   0.00e+00  1.66e+07    8.000000e+06   1.000000e+00   1.700000e-02
+   7 2.2716930763e+13  -5.39e-01  1.66e+00    1.714189e+07  -8.564608e-01   2.055814e-02
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 2.27169e+13
+rel. change during last iteration : -5.39482e-06
+
+degrees of freedom    (FIT_NDF)                        : 10
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.50721e+06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.27169e+12
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.71419e+07      +/- 6.093e+05    (3.554%)
+b               = -0.856461        +/- 0.2147       (25.07%)
+w               = 0.0205581        +/- 0.0007844    (3.815%)
+
+correlation matrix of the fit parameters:
+                a      b      w      
+a               1.000 
+b               0.182  1.000 
+w              -0.187 -0.985  1.000 
+
+
+*******************************************************************************
+Tue Dec 16 14:15:49 2025
+
+
+FIT:    data read from "SenzaFondo.txt" using 1:2
+        format = x:z
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*((cos(x+t))**2)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             t            
+   0 9.1380116929e+14   0.00e+00  1.02e+07    1.700000e+07  -8.500000e-01
+  41 8.6989093024e+14  -8.60e-01  1.02e-21    1.475005e+07  -1.226643e+00
+
+After 41 iterations the fit converged.
+final sum of squares of residuals : 8.69891e+14
+rel. change during last iteration : -8.60231e-06
+
+degrees of freedom    (FIT_NDF)                        : 11
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 8.89275e+06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 7.9081e+13
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.475e+07        +/- 4.115e+06    (27.9%)
+t               = -1.22664         +/- 0.2335       (19.04%)
+
+correlation matrix of the fit parameters:
+                a      t      
+a               1.000 
+t              -0.023  1.000 
+
+
+*******************************************************************************
+Tue Dec 16 14:17:15 2025
+
+
+FIT:    data read from "SenzaFondo.txt" using 1:2
+        format = x:z
+        x range restricted to [125.686 : 406.936]
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*((cos(x+t))**2)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 't' is zero.
+iter      chisq       delta/lim  lambda   a             t            
+   0 9.3650569071e+14   0.00e+00  7.45e+06    1.700000e+07   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Tue Dec 16 14:25:39 2025
+
+
+FIT:    data read from "SenzaFondo.txt" using 1:2
+        format = x:z
+        x range restricted to [125.686 : 406.936]
+        #datapoints = 13
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*cos(pi/180*(x-theta0))**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   A             theta0       
+   0 5.6282578330e+13   0.00e+00  2.68e+07    1.700000e+07   1.800000e+02
+   3 4.6056598985e+13  -5.33e-01  2.68e+04    1.829560e+07   1.815135e+02
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 4.60566e+13
+rel. change during last iteration : -5.33449e-06
+
+degrees of freedom    (FIT_NDF)                        : 11
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.04621e+06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.18696e+12
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+A               = 1.82956e+07      +/- 8.727e+05    (4.77%)
+theta0          = 181.514          +/- 2.616        (1.441%)
+
+correlation matrix of the fit parameters:
+                A      theta0 
+A               1.000 
+theta0          0.011  1.000 
+
+
+*******************************************************************************
+Tue Dec 16 16:19:20 2025
+
+
+FIT:    data read from "SenzaFondo.txt" using 1:2:3
+        format = x:z:s
+        x range restricted to [170.000 : 370.000]
+        #datapoints = 13
+function used for fitting: f(x)
+	f(x) = A*cos(pi/180*(x-theta0))**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   A             theta0       
+   0 3.5436043352e+02   0.00e+00  6.50e+01    1.829560e+07   1.815135e+02
+   5 3.2551412535e+02  -7.28e-01  6.50e-04    1.996864e+07   1.810358e+02
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 325.514
+rel. change during last iteration : -7.27554e-06
+
+degrees of freedom    (FIT_NDF)                        : 11
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 5.43987
+variance of residuals (reduced chisquare) = WSSR/ndf   : 29.5922
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+A               = 1.99686e+07      +/- 1.714e+06    (8.582%)
+theta0          = 181.036          +/- 2.774        (1.532%)
+
+correlation matrix of the fit parameters:
+                A      theta0 
+A               1.000 
+theta0          0.010  1.000 

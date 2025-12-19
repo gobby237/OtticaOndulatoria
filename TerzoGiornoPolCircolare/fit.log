@@ -1,0 +1,35 @@
+
+
+*******************************************************************************
+Thu Dec 18 15:00:59 2025
+
+
+FIT:    data read from "dati.txt" using 1:2:3
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = A*cos(pi/180*(x-theta0))**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   A             theta0       
+   0 1.5906557898e+03   0.00e+00  7.90e-07    1.000000e+00   1.000000e+00
+   6 4.4016201946e+02  -6.59e-10  7.90e+04    1.486829e+07  -2.590021e+04
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 440.162
+rel. change during last iteration : -6.58624e-15
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 12.1128
+variance of residuals (reduced chisquare) = WSSR/ndf   : 146.721
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+A               = 1.48683e+07      +/- 5.06e+06     (34.03%)
+theta0          = -25900.2         +/- 21.22        (0.08192%)
+
+correlation matrix of the fit parameters:
+                A      theta0 
+A               1.000 
+theta0         -0.156  1.000 

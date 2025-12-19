@@ -1,0 +1,66 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+# --------------------------------------------------------
+# 1. MODELLO DI MALUS
+# --------------------------------------------------------
+def malus(x, A, theta0):
+    return A * np.cos(np.pi/180 * (x - theta0))**2
+
+
+# --------------------------------------------------------
+# 2. LETTURA FILE (sostituisci 'dati.csv' col tuo)
+# --------------------------------------------------------
+df = pd.read_csv("dati.csv")  # deve contenere x, y, sigma
+
+x = df["x"].values
+y = df["y"].values
+sigma = df["sigma"].values  # incertezze punto per punto
+
+
+# --------------------------------------------------------
+# 3. FIT AI MINIMI QUADRATI PESATI
+# --------------------------------------------------------
+# Guess iniziali
+p0 = [y.max(), 0]  # A ~ max valore, theta0 ~ 0° (modificabile)
+
+pars, cov = curve_fit(
+    malus,
+    x,
+    y,
+    sigma=sigma,
+    p0=p0,
+    absolute_sigma=True   # fondamentale per avere incertezze vere
+)
+
+A_fit, theta0_fit = pars
+sigma_A, sigma_theta0 = np.sqrt(np.diag(cov))
+
+
+# --------------------------------------------------------
+# 4. STAMPA RISULTATI
+# --------------------------------------------------------
+print("\n=== RISULTATI FIT MALUS ===")
+print(f"A       = {A_fit:.6g} ± {sigma_A:.6g}")
+print(f"theta0  = {theta0_fit:.6g}° ± {sigma_theta0:.6g}°")
+
+
+# --------------------------------------------------------
+# 5. PLOT RISULTATO
+# --------------------------------------------------------
+# x più densi per la curva
+x_fit = np.linspace(min(x), max(x), 500)
+y_fit = malus(x_fit, A_fit, theta0_fit)
+
+plt.errorbar(x, y, sigma, fmt='o', label="Dati (pesati)")
+plt.plot(x_fit, y_fit, '-', label="Fit Malus")
+
+plt.xlabel("Angolo (°)")
+plt.ylabel("Intensità")
+plt.title("Fit pesato della legge di Malus")
+plt.legend()
+plt.grid(True)
+plt.show()
+
