@@ -1,0 +1,586 @@
+\documentclass[a4paper,12pt]{article}
+
+% Pacchetti utili
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{makecell}  
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage[parfill]{parskip}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{compat=1.18}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{amsmath} % Per l'ambiente cases e \text
+\usepackage[utf8]{inputenc}
+\usepackage{rotating}
+\usepackage[hidelinks]{hyperref} % oppure senza hidelinks se vuoi i link colorati
+\usepackage{geometry}
+\usepackage{booktabs} % Per linee orizzontali professionali
+\usepackage{array}    % Per la gestione delle colonne
+% Impostazioni di margine e intestazioni
+\geometry{a4paper, margin=1.5cm, tmargin=1cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Titolo e autori
+\title{\vspace{0.1cm} \textbf{Relazione ottica geometrica}}
+\author{Giacomo Caneva, Thomas Gozzi, Antonio Gobbato}
+\date{30 dicembre 2025}
+
+\begin{document}
+\maketitle
+
+\vspace{-0.7cm}
+\noindent\rule{\textwidth}{0.5pt}
+
+\section{Obiettivo}
+
+Dallo studio di un laser rosso con $\lambda$= 635 nm, determinazione di:
+\begin{itemize}
+    \item posizione assoluta dell'asse principale di polarizzazione del laser;
+    \item verifica della legge di Malus;
+    \item verifica costanza dell'intensità tramite lamina ritardante $\lambda/4$;
+    \item analisi della diffrazione per diversi tipi di polarizzazione. 
+\end{itemize}
+
+\section{Procedura sperimentale e apparato}
+Per tutta la successiva relazione si riportano valori di intensità che rappresentano l'intensità integrata (\texttt{RawIntDen} di ImageJ), calcolata come somma dei valori di grigio di tutti i pixel appartenenti all'area di interesse (ROI). I risultati di intensità non sono quindi da intendersi in unità radiometriche assolute, ma verranno espressi in unità arbitrarie (\textit{u.a.}).
+
+Inoltre, poiché l'impostazione dell'apparato sperimentale è stata modificata più volte nel corso dell'esperienza (ad esempio per riallineamenti e configurazioni di misura differenti), in ciascuna sezione verranno esplicitate le condizioni sperimentali adottate (configurazione dell'apparato e principali parametri di acquisizione), così da rendere confrontabili e interpretabili i dati riportati.
+
+
+\subsection{Incertezza del fondo e di posizionamento del laser}
+Durante le tre giornate di laboratorio si è prestata particolare attenzione a modellare le seguenti due componenti di errore casuale, individuate come le più significative: 
+\subsubsection*{Errore di fondo}
+Nel corso di una giornata sperimentale, si sono raccolte diverse misure dell'intensità del fondo a diversi orari (circa una acquisizione all'ora), in modo da poter stimare un valore medio da togliere alle misure. 
+\subsubsection*{Errore di posizionamento del laser}
+Per associare a ciascun punto sperimentale un’incertezza dovuta al posizionamento, si è stimata la ripetibilità dell’allineamento acquisendo un campione di 10 immagini del fuoco, ogni volta centrato sulla CCD. Le acquisizioni sono state effettuate in modo da rendere le misure tra loro indipendenti (ricentrando il fuoco tra uno scatto e il successivo) e mantenendo costanti le condizioni di acquisizione, in particolare il tempo di esposizione impostato in ImageJ. 
+
+Di seguito le tabelle con i dati, e le stime degli errori descritti sopra. per i dati grezzi si rimanda alla nota\footnote{https://shorturl.at/KPT7y}.  
+
+\begin{table}[H]
+\centering
+
+\begin{minipage}{0.48\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Orario} & \textbf{IntDen [u.a.]} \\
+\hline
+15:00 & $2.5\cdot 10^{6}$ \\
+\hline
+16:00 & $2.9\cdot 10^{6}$ \\
+\hline
+17:00 & $2.9\cdot 10^{6}$ \\
+\hline
+18:00 & $3.1\cdot 10^{6}$ \\
+\hline
+\textbf{Media} & \textbf{Stdev ($\sigma_{fondo}$)} \\
+\hline
+$2.9\cdot 10^{6}$ & $2.4 \cdot 10^5$ \\
+\hline
+\end{tabular}
+\caption{Fondo (laser spento) e statistiche.}
+\label{tab:fondo_completo}
+\end{minipage}
+\hspace{-0.1cm}
+\begin{minipage}{0.48\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Presa} & \textbf{IntDen [u.a.]} \\
+\hline
+1  & $2.4\cdot 10^{7}$ \\
+\hline
+2  & $2.4\cdot 10^{7}$ \\
+\hline
+3  & $2.4\cdot 10^{7}$ \\
+\hline
+4  & $2.4\cdot 10^{7}$ \\
+\hline
+5  & $2.4\cdot 10^{7}$ \\
+\hline
+6  & $2.4\cdot 10^{7}$ \\
+\hline
+7  & $2.4\cdot 10^{7}$ \\
+\hline
+8  & $2.4\cdot 10^{7}$ \\
+\hline
+9  & $2.4\cdot 10^{7}$ \\
+\hline
+10 & $2.4\cdot 10^{7}$ \\
+\hline
+\textbf{Media} & \textbf{Stdev ($\sigma_{pos}$)} \\
+\hline
+$2.4\cdot 10^{7}$ & $1.2 \cdot 10^5 $ \\
+\hline
+\end{tabular}
+\caption{Ripetizioni (posizionamento) e statistiche.}
+\label{tab:intensity_completo}
+\end{minipage}
+
+
+\end{table}
+
+
+
+
+\section{Determinazione dell'asse principale di polarizzazione del laser}
+
+L'apparato strumentale è costituito dalle seguenti componenti, come nello schema. 
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{ApparatoAssePrincipale.png}
+    \caption{Schema apparato}
+    \label{fig:placeholder}
+\end{figure}
+
+
+
+
+Si posiziona il polarizzatore P1 e, osservando la macchia luminosa su uno schermo bianco, si individua qualitativamente l’orientazione del goniometro corrispondente alla massima intensità trasmessa. Successivamente si acquisiscono misure dell’intensità in un intorno di tale orientazione, riducendo progressivamente il passo angolare in prossimità del massimo. Si avrà un massimo qualora l’asse di trasmissione del polarizzatore è parallelo alla direzione di polarizzazione del fascio incidente. Per fare questo si esegue un fit parabolico, come di seguito.
+
+\begin{figure}[H]
+\centering
+
+% --- Figura ---
+\begin{minipage}{0.55\textwidth}
+\centering
+\includegraphics[width=\linewidth]{fitpos.png}
+\captionof{figure}{Risultato del fit per P1}
+\label{fig:fitpos}
+\end{minipage}
+\hspace{0.5cm}
+% --- Tabella ---
+\begin{minipage}{0.35\textwidth}
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.35}
+
+\resizebox{0.95\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parametro & Stima & Incertezza ($\sigma$) \\
+\hline
+$a$ [1/{°}^2]             & $-3.01\times 10^{3}$ & $2.33\times 10^{2}$ \\
+\hline
+$b$ [1/°]            & $1.45 \times 10^{6}$              & $1.13 \times 10^{5}$              \\
+\hline
+$c$ [u.a.]            & $-1.53 \times 10^{8}$             & $1.36 \times 10^{7}$             \\
+\hline
+$x_v$ [°]        & $241.32$             & $1.28$             \\
+\hline
+\end{tabular}%
+}
+
+\captionof{table}{Riassunto del fit (MLE).}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+
+\end{figure}
+
+
+Avendo determinato la posizione del massimo per P1, si è ripetuta la stessa procedura aggiungendo il polarizzatore P2 come illustrato nella figura iniziale e si è ripetuta la stessa identica procedura per determinare il massimo di intensità per P2. Per i dati grezzi si rimanda alla seguente nota \footnote{https://shorturl.at/eZ11B}. Si riportano di seguito i risultati: 
+
+
+
+\begin{figure}[H]
+\centering
+
+% --- Figura ---
+\begin{minipage}{0.55\textwidth}
+\centering
+\includegraphics[width=\linewidth]{image.png}
+
+\captionof{figure}{Risultato del fit per P2}
+\label{fig:fitpos}
+\end{minipage}
+\hspace{0.5cm}
+% --- Tabella ---
+\begin{minipage}{0.35\textwidth}
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.35}
+
+\resizebox{0.95\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parametro & Stima & Incertezza ($\sigma$) \\
+\hline
+$a$ [1/{°}^2]             & $-2.74\times 10^{3}$ & $4.29\times 10^{2}$ \\
+\hline
+$b$ [1/°]            & $3.45 \times 10^{5}$              & $5.21 \times 10^{4}$              \\
+\hline
+$c$ [u.a.]            & $8.96 \times 10^{6}$             & $1.45 \times 10^{6}$             \\
+\hline
+$x_v$ [°]        & $62.95$             & $2.02$             \\
+\hline
+\end{tabular}%
+}
+
+\captionof{table}{Riassunto del fit (MLE).}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+
+\end{figure}
+
+
+Avendo posto P1 nella posizione di massima intensità precedentemente trovata e avendo ruotato P2 di 90°, si nota come l'intensità rilevata totale sia paragonabile con quella dei fondi (corrispondente circa allo "0" di intensità sperimentale). 
+
+Le operazione appena presentate si sono svolte senza sapere la posizione assoluta degli assi dei polarizzatori, per questo tutte le misure sono 
+
+Sapendo inoltre che la lamina ritardante $\lambda/2$ raddoppia l'angolo della polarizzazione, ponendone l'asse principale a 45° da P1 e da P2 si riesce, tramite regressione quadratica, a trovarne la posizione che garantisce massima intensità sulla CCD. 
+
+Si riportano di seguito i risultati di questa analisi: 
+
+
+\begin{figure}[H]
+\centering
+
+% --- Figura ---
+\begin{minipage}{0.55\textwidth}
+\centering
+\includegraphics[width=\linewidth]{lambdamezzi.png}
+
+\captionof{figure}{Risultato del fit per $\lambda/2$}
+\label{fig:fitpos}
+\end{minipage}
+\hspace{0.5cm}
+% --- Tabella ---
+\begin{minipage}{0.35\textwidth}
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.35}
+
+\resizebox{0.95\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parametro & Stima & Incertezza ($\sigma$) \\
+\hline
+$a$ [1/{°}^2]  & $-9.61\times 10^{3}$ & $5.58\times 10^{2}$ \\
+\hline
+$b$ [1/°] & $4.13 \times 10^{6}$ & $2.49 \times 10^{5}$  \\
+\hline
+$c$ [u.a.]  & $-4.25 \times 10^{8}$  & $2.76 \times 10^{7}$   \\
+\hline
+$x_v$ [°] & $214.92$  & $0.72$  \\
+\hline
+\end{tabular}%
+}
+
+\captionof{table}{Riassunto del fit (MLE).}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+
+\end{figure}
+
+In conclusione, conoscendo la direzione 
+
+
+
+
+
+
+
+\section{Verifica della legge di Malus}
+Di seguito si riporta la legge di Malus: 
+
+\begin{equation}
+    I = {E_0}^2\cos^2(\theta)
+\end{equation}
+
+\subsection{Setup sperimentale}
+
+Si mostra di seguito uno schema dell'apparato sperimentale utilizzato per la verifica della legge. 
+
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{SchemaMalus.png}
+    \caption{Schema apparato sperimentale per la verifica di Malus}
+    \label{fig:placeholder}
+\end{figure}
+
+Il fascio laser proveniente dalla sorgente viene polarizzato linearmente dal polarizzatore P1 (si rimanda alla sezione precedente per i dettagli) e quindi attraversa l’analizzatore P2. Quest’ultimo, dotato di goniometro a scatti, ha permesso di variare l’angolo $\theta$ tra gli assi di trasmissione di P1 e P2 su un intervallo di 180°, con passo di 15°, per un totale di 13 dati. Si rimanda alla nota\footnote{https://url-shortener.me/4KZX} per la visione dei dati  sperimentali grezzi, privi del segnale di fondo medio discusso nel paragrafo 2.1. 
+
+
+\subsection{Correzione esponenziale}
+
+La seguente correzione è stata applicata solo alla verifica della Legge di Malus. L’intensità registrata dalla CCD (RawIntDen) non è necessariamente in scala lineare con l’intensità ottica incidente. 
+Si assume quindi una risposta di tipo potenza, modellata come:
+\[
+I_{\mathrm{CCD}} = k\, I^{\gamma}
+\]
+Dove $I$ è l’intensità ottica effettiva, $k$ una costante di scala e $\gamma$ l’esponente che descrive l’eventuale non linearità del rivelatore (con $\gamma=1$ nel c  aso ideale lineare).
+
+Poiché la legge di Malus prevede $I(\theta)=I_{0}\cos^{2}(\theta-\theta_{0})$, ne segue che il segnale misurato dalla CCD deve scalare come:
+\[
+I_{\mathrm{CCD}}(\theta) = A\,\cos^{2\gamma}(\theta-\theta_{0}),
+\]
+Il parametro $\gamma$ è stato quindi stimato tramite un fit (MLE) del modello precedente ai dati sperimentali; la figura e la tabella seguenti riportano il risultato.
+
+\begin{figure}[H]
+\centering
+
+\begin{minipage}{0.60\textwidth}
+\centering
+\includegraphics[width=\linewidth]{FitgammaMalus.png}
+\caption{Fit per trovare $\gamma$.}
+\label{fig:fit_gamma_malus}
+\end{minipage}
+\hspace{-0.1cm}
+\begin{minipage}{0.35\textwidth}
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+
+\resizebox{0.95\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parametro & Stima & Incertezza ($1\sigma$) \\
+\hline
+$A$ [u.a.]          & $1.7\times 10^{7}$ & $3.6\times 10^{5}$ \\
+\hline
+$\theta_{0}\, $ [°] & $1.1$              & $0.6$              \\
+\hline
+$\gamma  $[ad]     & $0.61$             & $0.02$             \\
+\hline
+\end{tabular}%
+}
+
+\captionof{table}{Riassunto fit, metodo della MLE.}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+
+\end{figure}
+
+Una volta ottenuto $\gamma$, i dati vengono ricondotti a una scala proporzionale all’intensità ottica elevando il segnale misurato alla potenza $1/\gamma$, ossia $I \propto I_{\mathrm{CCD}}^{1/\gamma}$.
+
+\subsection{Verifica della Legge}
+
+Prima di procedere con la stima dei parametri, si è verificato che le ipotesi alla base del modello statistico fossero ragionevolmente soddisfatte, in particolare quelle necessarie per interpretare correttamente la matrice di covarianza dei parametri stimati. A tal fine si è analizzato il comportamento dei residui del fit ottenuto tramite massima verosimiglianza: in prima approssimazione, essi dovrebbero risultare compatibili con una distribuzione gaussiana (a media nulla e varianza costante). Di seguito si riportano i grafici dei residui, utilizzati per valutare tale compatibilità.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{residuiMalus.png}
+    \caption{plot residui e residui normalizzati}
+    \label{fig:placeholder}
+\end{figure}
+
+Dai grafici dei residui si osserva che le ipotesi discusse sopra non risultano pienamente soddisfatte. Di conseguenza, pur potendo comunque determinare i parametri tramite massima verosimiglianza, la stima delle incertezze basata sulla matrice di covarianza non sarebbe affidabile. A conferma di questo, si propone di seguito un'analisi dei quantili associati ai dati sperimentali, confrontati con il quantile teorico (Q-Q plot). Se i quantili associati ai residui normalizzati seguissero un andamento gaussiano, si collocherebbero prossimi alla retta $y = x$. 
+
+\begin{figure}[H]
+\centering
+
+\begin{minipage}{0.60\textwidth}
+\centering
+\includegraphics[width=\linewidth]{RettaQQplot.png}
+\caption{fit lineare - quantili teo. vs quantili sperimentali}
+\label{fig:fit_gamma_malus}
+\end{minipage}
+\hspace{-0.1cm}
+\begin{minipage}{0.35\textwidth}
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+
+\resizebox{0.95\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parametro & Stima & Incertezza ($\sigma$) \\
+\hline
+$m$ [ad]          & 1.8 & 0.2 \\
+\hline
+$b$[ad] & 0.3 &  0.2             \\
+\hline
+\end{tabular}%
+}
+
+\captionof{table}{Stime dal fit}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+
+\end{figure}
+
+Il QQ-plot dei residui normalizzati mostra deviazioni statisticamente significative dalla retta teorica $y = x$, soprattutto nelle code: i residui presentano una dispersione maggiore e code più grandi rispetto a una gaussiana standard. La pendenza $m > 1$ ci permette inoltre di dire che le incertezze assegnate $\sigma_i$ sono probabilmente sottostimate (o che è presente una componente di variabilità che non si è riusciti a descrivere). L’intercetta diversa da zero indica inoltre un possibile offset sistematico dei residui. \\
+Per le ragioni elencate sopra, la verifica della legge di Malus verrà effettuata mediante una procedura di BootStrap, così da ottenere stime e intervalli di confidenza più robusti. Di seguito si riporta il grafico del fit, con a fianco una tabella riassuntiva. 
+
+\begin{figure}[H]
+\centering
+
+\begin{minipage}{0.60\textwidth}
+\centering
+\includegraphics[width=\linewidth]{FitMalus.png}
+\caption{Fit verifica legge Malus}
+\label{fig:fit_gamma_malus}
+\end{minipage}
+\hspace{-0.1cm}
+\begin{minipage}{0.35\textwidth}
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+
+\resizebox{0.95\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parametro & Stima & Incertezza ($\sigma$) \\
+\hline
+$A$ [u.a.]          & $8.2\times 10^{11}$ & $1.9\times 10^{10}$ \\
+\hline
+$\theta_{0}$  [°] & $1.2$              & $0.3$              \\
+\hline
+\end{tabular}%
+}
+
+\captionof{table}{Riassunto fit, metodo della MLE.}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+
+\end{figure}
+
+Di seguito la distribuzione dei parametri del fit $A$ e $\theta_0$ nelle diverse iterazioni di BootStrap. 
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{DistribuzioneParametriBootStrap.png}
+    \caption{Distribuzione parametri BootStrap}
+    \label{fig:placeholder}
+\end{figure}
+
+Si evince che le distribuzioni di entrambi i dati siano gaussiane, sintomo di bontà del fit. \\
+Di seguito si riporta la tabella complessiva dei dati sperimentali, corretti per la non linearità della CCD (esponente $\gamma$) e depurati dal contributo di fondo. \\Per ciascun punto sono indicate l’incertezza associata $\sigma_i$ e il corrispondente contributo al test del $\chi^2$. 
+L’incertezza su ogni misura è stata stimata combinando in quadratura tre contributi: (i) la ripetibilità del posizionamento del fuoco sulla CCD, (ii) l’incertezza nella stima del fondo, e (iii) una componente relativa del 
+5\% attribuita alle fluttuazioni dell’intensità del laser.
+
+\begin{equation}
+\sigma_{y_i} = \sqrt{ \sigma_{\mathrm{pos}}^2 + \sigma_{\mathrm{fondo}}^2 + \left(0.05\, y_i\right)^2 } \, .
+\end{equation}
+
+
+
+
+
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3} % spazio verticale nelle celle
+\setlength{\tabcolsep}{10pt}      % spazio orizzontale nelle celle
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Gradi [$^\circ$]} & \textbf{$y$ [u.a.]} & \textbf{$\sigma_y$ [u.a.]} & \textbf{$\chi_i^2$} \\
+\hline
+180 & $8.37\cdot 10^{11}$ & $4.18\cdot 10^{10}$ & 0.1 \\
+\hline
+195 & $7.89\cdot 10^{11}$ & $3.95\cdot 10^{10}$ & 0.1 \\
+\hline
+210 & $6.54\cdot 10^{11}$ & $3.27\cdot 10^{10}$ & 0.4 \\
+\hline
+225 & $4.49\cdot 10^{11}$ & $2.25\cdot 10^{10}$ & 0.8 \\
+\hline
+240 & $2.32\cdot 10^{11}$ & $1.16\cdot 10^{10}$ & 0.8 \\
+\hline
+255 & $5.67\cdot 10^{10}$ & $2.83\cdot 10^{9}$  & 7.3 \\
+\hline
+270 & $4.74\cdot 10^{8}$  & $2.37\cdot 10^{7}$  & 14.0 \\
+\hline
+285 & $4.43\cdot 10^{10}$ & $2.21\cdot 10^{9}$  & 1.0 \\
+\hline
+300 & $2.05\cdot 10^{11}$ & $1.03\cdot 10^{10}$ & 2.1 \\
+\hline
+315 & $4.20\cdot 10^{11}$ & $2.10\cdot 10^{10}$ & 1.5 \\
+\hline
+330 & $6.32\cdot 10^{11}$ & $3.16\cdot 10^{10}$ & 0.9 \\
+\hline
+345 & $6.55\cdot 10^{11}$ & $3.28\cdot 10^{10}$ & 10.0 \\
+\hline
+360 & $8.39\cdot 10^{11}$ & $4.19\cdot 10^{10}$ & 0.2 \\
+\hline
+\end{tabular}
+
+\caption{Dati sperimentali con incertezze e contributi $\chi_i^2$ al test del chi-quadro.}
+\label{tab:malus_dati_sperimentali_completa_chi2}
+\end{table}
+
+
+\paragraph{Ipotesi del test del $\chi^2$.}
+Si assume come ipotesi nulla $H_0$ che il modello descriva correttamente i dati e che gli scarti tra misure e valori attesi siano compatibili con errori gaussiani a media nulla e deviazioni standard note $\sigma_i$. In tali condizioni la statistica
+\[
+\chi^2=\sum_{i=1}^{N}\left(\frac{y_i-y_{\mathrm{fit},i}}{\sigma_i}\right)^2
+\]
+segue una distribuzione $\chi^2$ con $\nu = N-p$ gradi di libert\`a, dove $p$ \`e il numero di parametri stimati dal fit (in questo caso 2).
+
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Quantità} & \textbf{Valore} \\
+\hline
+GDL \`a $\nu = N-p$ & 11 \\
+\hline
+$\chi^2_{tot}$ & 39.3 \\
+\hline
+$\chi^2_{soglia}$ & 19.6 \\
+\hline
+Risultato del test & \textbf{Rifiutato} \\
+\hline
+\end{tabular}
+
+\caption{Tabella riassuntiva del test del $\chi^2$.}
+\label{tab:chi2_test_riassunto}
+\end{table}
+
+Dato che $\chi^2_{tot} > \chi^2_{soglia}$ l'ipotesi iniziale non è verificata, nonostante anche le correzioni effettuate sui dati attraverso l'esponente $\gamma$. Come discusso in precedenza ipotizziamo sia dovuto alla modellizzazione di alcuni errori sistematici. 
+
+
+
+
+
+
+
+
+
+
+
+\section{Verifica costanza dell'intensità per polarizzazione circolare}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{SchemaLambdaQuarti.png}
+    \caption{Apparato sperimentale}
+    \label{fig:placeholder}
+\end{figure}
+
+
+
+\section{Analisi della diffrazione e stima del diametro della fenditura}
+
+\section{Conclusioni}
+
+\section{Appendice}
+
+\end{document}
