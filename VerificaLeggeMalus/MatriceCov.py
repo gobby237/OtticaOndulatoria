@@ -82,3 +82,34 @@ plt.title("Fit della legge di Malus (con matrice di covarianza)")
 plt.grid(True)
 plt.legend()
 plt.show()
+
+# ---------------------------
+# PLOT RESIDUI (AFFIANCATI)
+# ---------------------------
+residui = y - y_teo
+residui_norm = residui / sigma
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 4), sharex=True)
+
+# Residui
+ax[0].axhline(0, lw=1)
+ax[0].plot(x, residui, 'o')
+ax[0].set_title("Residui: $y - y_{fit}$")
+ax[0].set_xlabel("Angolo (°)")
+ax[0].set_ylabel("Residuo")
+ax[0].grid(True)
+
+# Residui normalizzati
+ax[1].axhline(0, lw=1)
+ax[1].axhline(1, ls="--", lw=1)
+ax[1].axhline(-1, ls="--", lw=1)
+ax[1].axhline(2, ls=":", lw=1)
+ax[1].axhline(-2, ls=":", lw=1)
+ax[1].plot(x, residui_norm, 'o')
+ax[1].set_title("Residui normalizzati: $(y-y_{fit})/\\sigma$")
+ax[1].set_xlabel("Angolo (°)")
+ax[1].set_ylabel("Residuo normalizzato")
+ax[1].grid(True)
+
+plt.tight_layout()
+plt.show()
