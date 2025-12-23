@@ -5,6 +5,18 @@ from scipy.optimize import curve_fit
 from scipy.stats import probplot
 
 # ---------------------------
+# FONT (stessa grandezza di prima)
+# ---------------------------
+plt.rcParams.update({
+    "font.size": 13,
+    "axes.titlesize": 15,
+    "axes.labelsize": 14,
+    "legend.fontsize": 12,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+})
+
+# ---------------------------
 # MODELLO
 # ---------------------------
 def malus(x, A, theta0):
@@ -128,10 +140,6 @@ plt.grid(True)
 plt.legend()
 plt.show()
 
-
-
-
-
 # ---------------------------
 # FIT + BANDE BOOTSTRAP
 # ---------------------------
@@ -145,8 +153,8 @@ plt.figure(figsize=(9,6))
 plt.errorbar(x, y, sigma, fmt='o', label="Dati")
 plt.plot(x_fit, y_fit, "r-", lw=2, label="Fit bootstrap")
 plt.fill_between(x_fit, y_lower, y_upper, color='red', alpha=0.25, label="Banda (±1σ bootstrap)")
-plt.xlabel("Angolo (°)")
-plt.ylabel("Intensità")
+plt.xlabel("Angolo [°]")
+plt.ylabel("Intensità [u.a.]")
 plt.title("Fit Legge di Malus — metodo Bootstrap")
 plt.grid(True)
 plt.legend()
@@ -168,7 +176,7 @@ plt.subplot(1,2,2)
 plt.hist(theta_samples, bins=40, color="C1", alpha=0.7)
 plt.axvline(theta_mean, color="black", label="media bootstrap")
 plt.title("Distribuzione bootstrap di θ₀")
-plt.xlabel("theta0 (°)")
+plt.xlabel("theta0 [°]")
 plt.legend()
 
 plt.tight_layout()

@@ -3,6 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+plt.rcParams.update({
+    "font.size": 13,
+    "axes.titlesize": 15,
+    "axes.labelsize": 14,
+    "legend.fontsize": 12,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+})
+
 # ---------------------------
 # MODELLO
 # ---------------------------
@@ -95,7 +104,7 @@ fig, ax = plt.subplots(1, 2, figsize=(12, 4), sharex=True)
 ax[0].axhline(0, lw=1)
 ax[0].plot(x, residui, 'o')
 ax[0].set_title("Residui: $y - y_{fit}$")
-ax[0].set_xlabel("Angolo (°)")
+ax[0].set_xlabel("Angolo [°]")
 ax[0].set_ylabel("Residuo")
 ax[0].grid(True)
 
@@ -107,7 +116,7 @@ ax[1].axhline(2, ls=":", lw=1)
 ax[1].axhline(-2, ls=":", lw=1)
 ax[1].plot(x, residui_norm, 'o')
 ax[1].set_title("Residui normalizzati: $(y-y_{fit})/\\sigma$")
-ax[1].set_xlabel("Angolo (°)")
+ax[1].set_xlabel("Angolo [°]")
 ax[1].set_ylabel("Residuo normalizzato")
 ax[1].grid(True)
 

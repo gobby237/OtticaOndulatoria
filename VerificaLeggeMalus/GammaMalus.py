@@ -3,6 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+
+plt.rcParams.update({
+    "font.size": 13,
+    "axes.titlesize": 15,
+    "axes.labelsize": 14,
+    "legend.fontsize": 12,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+})
 # ------------------------------------------------------
 # MODELLO COS^n (versione stabile con |cos|^n)
 # ------------------------------------------------------
@@ -82,8 +91,8 @@ y_fit = malus_n(x_fit, A_fit, theta_fit, n_fit)
 
 plt.errorbar(x, y, sigma, fmt='o', label="Dati")
 plt.plot(x_fit, y_fit, '-', label=f"Fit cos^{n_fit:.2f}")
-plt.xlabel("Angolo (°)")
-plt.ylabel("Intensità (CCD)")
+plt.xlabel("Angolo [°]")
+plt.ylabel("Intensità [u.a.]")
 plt.title("Fit per stima dell’esponente n")
 plt.grid(True)
 plt.legend()
