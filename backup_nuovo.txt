@@ -52,7 +52,7 @@
 
 \section{Obiettivo}
 
-Dallo studio di un laser rosso con $\lambda$= 635 nm, determinazione di:
+Dallo studio di un laser rosso con $\lambda$= 635 nm:
 \begin{itemize}
     \item posizione assoluta dell'asse principale di polarizzazione del laser;
     \item verifica della legge di Malus;
@@ -61,17 +61,14 @@ Dallo studio di un laser rosso con $\lambda$= 635 nm, determinazione di:
 \end{itemize}
 
 \section{Procedura sperimentale e apparato}
-Per tutta la successiva relazione si riportano valori di intensità che rappresentano l'intensità integrata (\texttt{RawIntDen} di ImageJ), calcolata come somma dei valori di grigio di tutti i pixel appartenenti all'area di interesse (ROI). I risultati di intensità non sono quindi da intendersi in unità radiometriche assolute, ma verranno espressi in unità arbitrarie (\textit{u.a.}).
-
+Per tutta la successiva relazione si riportano valori di intensità che rappresentano l'intensità integrata (\texttt{RawIntDen} di ImageJ), calcolata come somma dei valori di grigio di tutti i pixel appartenenti all'area di interesse (ROI). I risultati di intensità non sono quindi da intendersi in unità radiometriche assolute, ma verranno espressi in unità arbitrarie (\textit{u.a.}).\\
 Inoltre, poiché l'impostazione dell'apparato sperimentale è stata modificata più volte nel corso dell'esperienza (ad esempio per riallineamenti e configurazioni di misura differenti), in ciascuna sezione verranno esplicitate le condizioni sperimentali adottate (configurazione dell'apparato e principali parametri di acquisizione), così da rendere confrontabili e interpretabili i dati riportati.
-
-
 \subsection{Incertezza del fondo e di posizionamento del laser}
 Durante le tre giornate di laboratorio si è prestata particolare attenzione a modellare le seguenti due componenti di errore casuale, individuate come le più significative: 
 \subsubsection*{Errore di fondo}
 Nel corso di una giornata sperimentale, si sono raccolte diverse misure dell'intensità del fondo a diversi orari (circa una acquisizione all'ora), in modo da poter stimare un valore medio da togliere alle misure. 
 \subsubsection*{Errore di posizionamento del laser}
-Per associare a ciascun punto sperimentale un’incertezza dovuta al posizionamento, si è stimata la ripetibilità dell’allineamento acquisendo un campione di 10 immagini del fuoco, ogni volta centrato sulla CCD. Le acquisizioni sono state effettuate in modo da rendere le misure tra loro indipendenti (ricentrando il fuoco tra uno scatto e il successivo) e mantenendo costanti le condizioni di acquisizione, in particolare il tempo di esposizione impostato in ImageJ. 
+Per associare a ciascun punto sperimentale un’incertezza dovuta al posizionamento del laser, si è stimata la ripetibilità dell’allineamento acquisendo un campione di 10 immagini del profilo del fascio, ogni volta centrato sulla CCD. Le acquisizioni sono state effettuate in modo da rendere le misure tra loro indipendenti (ricentrando il fuoco tra uno scatto e il successivo) e mantenendo costanti le condizioni di acquisizione, in particolare il tempo di esposizione impostato in ImageJ ($1500 ms$). 
 
 Di seguito le tabelle con le stime degli errori descritti sopra. per i dati grezzi si rimanda alla nota\footnote{https://shorturl.at/KPT7y}.  
 
@@ -115,7 +112,7 @@ $2.4\cdot 10^{7}$ & $1.2\cdot 10^{5}$ \\
 
 
 
-\section{Determinazione dell'asse principale di polarizzazione del laser}
+\section{Stima dell'asse principale di polarizzazione del laser}
 
 \subsection{Apparato sperimentale}
 
@@ -126,18 +123,17 @@ $2.4\cdot 10^{7}$ & $1.2\cdot 10^{5}$ \\
     \label{fig:placeholder}
 \end{figure}
 
-Si posiziona P1 e, osservando la macchia su uno schermo, si individua l’orientazione di massimo della trasmissione. Si acquisiscono quindi misure attorno a tale angolo, infittendo il passo vicino al massimo, che si ottiene quando l’asse di P1 è parallelo alla polarizzazione del fascio incidente. La posizione del massimo viene stimata tramite un fit parabolico, come di seguito.
-
 \subsection{Analisi dati}
+
+Si è posizionato P1 e, osservando il profilo del laser su uno schermo bianco, si è individuata l’orientazione di massima trasmissione. Si sono quindi acquisite misure attorno a tale angolo, infittendo il passo vicino al massimo, che si ottiene quando l’asse di P1 è parallelo alla polarizzazione del fascio incidente. La posizione del massimo viene stimata tramite un fit parabolico, come di seguito.
 
 \begin{figure}[H]
 \centering
-
 % --- Figura ---
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.52\textwidth}
 \centering
-\includegraphics[width=\linewidth]{fitpos.png}
-\captionof{figure}{Risultato del fit per P1}
+\includegraphics[width=\linewidth]{PosP1.png}
+\captionof{figure}{Risultato del fit per $P_1$.}
 \label{fig:fitpos}
 \end{minipage}
 \hspace{0.5cm}
@@ -152,13 +148,13 @@ Si posiziona P1 e, osservando la macchia su uno schermo, si individua l’orient
 \hline
 Parametro & Stima & Incertezza ($\sigma$) \\
 \hline
-$a$ [1/{°}^2]             & $-3.0\cdot 10^{3}$ & $2.3\cdot 10^{2}$ \\
+$a$ [$1/^\circ{}^{2}$] & $-3.0\cdot 10^{3}$ & $2.3\cdot 10^{2}$ \\
 \hline
-$b$ [1/°]            & $1.5 \cdot 10^{6}$              & $1.1 \cdot 10^{5}$              \\
+$b$ [$1/^\circ$]       & $1.5\cdot 10^{6}$  & $1.1\cdot 10^{5}$ \\
 \hline
-$c$ [u.a.]            & $-1.5 \cdot 10^{8}$             & $1.4 \cdot 10^{7}$             \\
+$c$ [u.a.]             & $-1.5\cdot 10^{8}$ & $1.4\cdot 10^{7}$ \\
 \hline
-$x_v$ [°]        & $241.3$             & $1.3$             \\
+$x_{\mathrm{P1}}$ [$^\circ$]       & $241.3$            & $1.3$ \\
 \hline
 \end{tabular}%
 }
@@ -170,17 +166,15 @@ $x_v$ [°]        & $241.3$             & $1.3$             \\
 \end{figure}
 
 
-Determinata la posizione di massimo per P1, si è ripetuta la procedura inserendo anche l’analizzatore P2, come illustrato nella figura iniziale, ed eseguendo la stessa scansione angolare per individuare l’orientazione di P2 corrispondente alla massima intensità trasmessa. Per i dati grezzi si rimanda alla seguente nota \footnote{https://shorturl.at/eZ11B}. Si riportano di seguito i risultati del fit parabolico: 
 
-
+Determinata la posizione di massimo per P1, si è inserito anche l’analizzatore P2 come illustrato nella figura iniziale e si è eseguita la stessa scansione angolare per individuare l’orientazione corrispondente alla massima intensità trasmessa. Per i dati grezzi si rimanda alla nota \footnote{https://shorturl.at/eZ11B}. Si riportano di seguito i risultati del fit parabolico: 
 
 \begin{figure}[H]
 \centering
-
 % --- Figura ---
 \begin{minipage}{0.55\textwidth}
 \centering
-\includegraphics[width=\linewidth]{posP2.png}
+\includegraphics[width=\linewidth]{PosP2.png}
 
 \captionof{figure}{Risultato del fit per P2}
 \label{fig:fitpos}
@@ -203,7 +197,7 @@ $b$ [1/°]            & $3.5 \cdot 10^{5}$              & $5.2 \cdot 10^{4}$    
 \hline
 $c$ [u.a.]            & $9.0 \cdot 10^{6}$             & $1.5 \cdot 10^{6}$             \\
 \hline
-$x_v$ [°]        & $63.0$             & $2.0$             \\
+$x_{\mathrm{P2}}$ [°]        & $63.0$             & $2.0$             \\
 \hline
 \end{tabular}%
 }
@@ -213,36 +207,17 @@ $x_v$ [°]        & $63.0$             & $2.0$             \\
 \end{minipage}
 
 \end{figure}
-Le operazioni appena presentate si sono svolte senza sapere la posizione assoluta degli assi dei polarizzatori, per questo tutte le misure riportate sono relative agli zeri dei goniometri. Sperimentalmente, appena si è determinata la posizione di massimo si è fissato lo 0 della scala graduata all'angolazione trovata. 
 
-Avendo quindi posto P1 nella posizione di massima intensità e avendo ruotato P2 di 90°, si nota come l'intensità rilevata totale sia paragonabile a quella dei fondi (corrispondente circa allo "0" di intensità sperimentale). 
-
-
-Mantenendo tale la configurazione e fissati i due polarizzatori, è stata posizionata una lamina ritardante a $\lambda/2$ tra i due oggetti e si è sfruttata la proprietà della lamina di cambiare l'orientazione del fascio polarizzato, per trovare l'angolazione che trasmetteva la massima intensità luminosa sullo schermo. 
-Dopo aver identificato qualitativamente il punto di massimo si sono acquisite misure intorno a tale orientazione. \\
-Con l'ausilio della lamina, l'asse di polarizzazione del fascio in entrata ruota del doppio dell'angolo ($\theta$) tra l'asse ottico della $\lambda/2$ e quello del polarizzatore; ci si aspetta dunque che l'intensità massima si registri ponendo la lamina a 45° da P1 e da P2. \\
-Si riportano di seguito i risultati di questa analisi:
-
-
-
-%L'asse ottico della lamina a $\lambda/2$ posto ad un angolo $\theta$ rispetto all'asse del fascio polarizzato ruota 
-
-
-
-%Per determinare la posizione assoluta del laser si è dovuta impiegare la lamina ritardante $\lambda/2$, della quale era noto l'angolo dell'asse. 
-
-%Sapendo inoltre che questa lamina raddoppia l'angolo della polarizzazione, ponendone l'asse principale a 45° da P1 e da P2 si riesce, tramite regressione quadratica della acquisizioni di intensità, a trovarne la posizione che garantisce massima intensità sulla CCD. 
-
- 
-
+Le operazioni appena descritte sono state svolte senza conoscere la posizione assoluta degli assi di trasmissione dei polarizzatori $P_1$ e $P_2$; di conseguenza, tutte le angolazioni riportate sono da intendersi relative agli zeri dei rispettivi goniometri. Operativamente, una volta individuata la configurazione di massima intensit\`a, si \`e scelto di fissare tale orientazione come origine ($0^\circ$) della scala graduata. Nel seguito si indicheranno quindi con ``fascio in ingresso'' e ``fascio in uscita'' p1 e p2. \\
+Posto P1 nella posizione di massima intensità e ruotato P2 di 90°, l’intensità trasmessa risulta compatibile con il fondo. Mantenendo fissi i polarizzatori, si inserisce tra essi una lamina $\lambda/2$ e si sfrutta la sua capacità di ruotare la polarizzazione per individuare l’orientazione che massimizza l’intensità. Identificato qualitativamente il massimo, si acquisiscono misure in un suo intorno e si stima la posizione del picco tramite un fit parabolico.
 
 \begin{figure}[H]
 \centering
 
 % --- Figura ---
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.52\textwidth}
 \centering
-\includegraphics[width=\linewidth]{lambdamezzi.png}
+\includegraphics[width=\linewidth]{lambdafratto2.png}
 
 \captionof{figure}{Risultato del fit per $\lambda/2$}
 \label{fig:fitpos}
@@ -265,7 +240,7 @@ $b$ [1/°] & $4.1 \cdot 10^{6}$ & $2.5 \cdot 10^{5}$  \\
 \hline
 $c$ [u.a.]  & $-4.3 \cdot 10^{8}$  & $2.8 \cdot 10^{7}$   \\
 \hline
-$x_v$ [°] & $214.9$  & $0.7$  \\
+$x_{\lambda/2}$ [°] & $214.9$  & $0.7$  \\
 \hline
 \end{tabular}%
 }
@@ -275,26 +250,48 @@ $x_v$ [°] & $214.9$  & $0.7$  \\
 \end{minipage}
 
 \end{figure}
+
+Grazie alla lamina, l'asse di polarizzazione del fascio in entrata ruota del doppio dell'angolo ($\theta$) tra l'asse ottico della $\lambda/2$ e quello del polarizzatore P1; ci si aspetta dunque che l'intensità massima si registri ponendo la lamina a $\theta=$ 45° da p1 e da p2. \\
 A differenza dei polarizzatori, l'asse ottico della lamina è allineato con lo zero sul goniometro e quindi la sua angolazione rispetto alla verticale corrisponde esattamente alla sua posizione assoluta nello spazio.\\
 Avendo trovato l'angolo assoluto di $\lambda/2$ si è potuto risalire agli angoli di P1 e P2 tramite considerazioni geometriche, riportate nello schema seguente: 
 
-
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\linewidth]{PosAssP1&P2.png}
-    \caption{Schema apparato sperimentale per la verifica di Malus}
+    \includegraphics[width=0.4\linewidth]{posp1p2.png}
+    \caption{Posizione assoluta assi p1 e p2}
     \label{fig:placeholder}
 \end{figure}
 
-Tuttavia, con questo metodo da solo, non si riesce a stabilire quale dei due effettivamente sia il fascio di entrata e di uscita, ma solo l'angolazione di P1 e P2; per decretare ciò, è dunque bastato trovare qualitativamente il massimo di intensità con un terzo polarizzatore, sostituito a P1, di cui si conosceva l'asse. 
+Tuttavia, con questo metodo da solo, non si riesce a stabilire quale dei due effettivamente sia il fascio di entrata e quale di uscita, ma solo l'angolazione di p1 e p2; per decretare ciò, è dunque bastato trovare qualitativamente il massimo di intensità con un terzo polarizzatore ($\mathrm{P}_{\mathrm{ref}}$), sostituito a P1, di cui si conosceva l'asse. 
 
-Si giunge così alle seguenti conclusioni riguardanti la posizione dell'asse principale di polarizzazione del laser, la cui incertezza è stata trovata tramite somma in quadratura delle incertezze sulle posizioni di P1, P2 e $\lambda/2$. 
+\begin{table}[H]
+\centering
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Posizioni assolute rispetto alla verticale}} \\
+\hline
+\textbf{Elemento} & \textbf{Angolo} & \textbf{Incertezza} \\
+\hline
+p1 [°]       & $-79.9$ & $2.5$ \\
+\hline
+$\lambda/2$ [°] & $-34.9$ & $2.5$ \\
+\hline
+p2  [°]      & $11.9$ & $2.5$ \\
+\hline
+\end{tabular}
+\caption{Posizioni assolute rispetto alla verticale}
+\label{tab:posizioni_assolute}
+\end{table}
 
-**INSERIRE TABELLA RISULTATI** 
+Si giunge così alle seguenti conclusioni riguardanti la posizione dell'asse principale di polarizzazione del laser, la cui incertezza è stata trovata tramite somma in quadratura delle incertezze sulle posizioni di P1, P2 e $\lambda/2$, che si considerano contributi indipendenti. 
+
 
 Per ciascuna della componenti di errore si è notato come l'incertezza sulla lettura del goniometro, ottenuta riducendo a distribuzione costante (non si è deciso di usare la distribuzione triangolare dato che non si sono mai usate le posizioni notevoli nei goniometri a scatti) la più piccola tacca di lettura (considerata uguale a 5'), sia ordini di grandezza minore e quindi trascurata. Il valore numerico viene comunque riportato: 
-
-$$\sigma=\frac{ptl}{2\sqrt{3}}=0.02°$$
+\begin{equation}
+    \sigma_{let}=\frac{ptl}{2\sqrt{3}}=0.02°
+\end{equation}
 
 
 
@@ -321,15 +318,14 @@ Il fascio laser proveniente dalla sorgente viene polarizzato linearmente dal pol
 
 La seguente correzione è stata applicata solo alla verifica della Legge di Malus. L’intensità registrata dalla CCD (RawIntDen) non è necessariamente in scala lineare con l’intensità ottica incidente. 
 Si assume quindi una risposta di tipo potenza, modellata come:
-\[
+\begin{equation}
 I_{\mathrm{CCD}} = k\, I^{\gamma}
-\]
+\end{equation}
 Dove $I$ è l’intensità ottica effettiva, $k$ una costante di scala e $\gamma$ l’esponente che descrive l’eventuale non linearità del rivelatore (con $\gamma=1$ nel c  aso ideale lineare).
-
 Poiché la legge di Malus prevede $I(\theta)=I_{0}\cos^{2}(\theta-\theta_{0})$, ne segue che il segnale misurato dalla CCD deve scalare come:
-\[
+\begin{equation}
 I_{\mathrm{CCD}}(\theta) = A\,\cos^{2\gamma}(\theta-\theta_{0}),
-\]
+\end{equation}
 Il parametro $\gamma$ è stato quindi stimato tramite un fit (MLE) del modello precedente ai dati sperimentali; la figura e la tabella seguenti riportano il risultato.
 
 \begin{figure}[H]
@@ -416,8 +412,7 @@ $q$ [ad] & 0.3 &  0.2             \\
 
 \end{figure}
 
-Il QQ-plot dei residui normalizzati mostra deviazioni statisticamente significative dalla retta teorica $y = x$, soprattutto nelle code: i residui presentano una dispersione maggiore e code più grandi rispetto a una gaussiana standard. La pendenza $m > 1$ ci permette inoltre di dire che le incertezze assegnate $\sigma_i$ sono probabilmente sottostimate (o che è presente una componente di variabilità che non si è riusciti a descrivere). L’intercetta diversa da zero indica inoltre un possibile offset sistematico dei residui. \\
-Per le ragioni elencate sopra, la verifica della legge di Malus verrà effettuata mediante una procedura di BootStrap, così da ottenere stime e intervalli di confidenza più robusti. Di seguito si riporta il grafico del fit del tipo $I = A\cos^2(\theta - \theta_0)$, con a fianco una tabella riassuntiva. 
+Il QQ-plot dei residui normalizzati mostra deviazioni statisticamente significative dalla retta teorica $y = x$, soprattutto nelle code: i residui presentano una dispersione maggiore e code più grandi rispetto a una gaussiana standard. La pendenza $m > 1$ ci permette inoltre di dire che le incertezze assegnate $\sigma_i$ sono probabilmente sottostimate (o che è presente una componente di variabilità che non si è riusciti a descrivere). L’intercetta diversa da zero indica inoltre un possibile offset sistematico dei residui. Per le ragioni elencate, la verifica della legge di Malus verrà effettuata mediante una procedura di BootStrap, così da ottenere stime e intervalli di confidenza più robusti. Di seguito si riporta il grafico del fit del tipo $I = A\cos^2(\theta - \theta_0)$, con a fianco una tabella riassuntiva. 
 
 \begin{figure}[H]
 \centering
@@ -476,7 +471,7 @@ Di seguito si riporta la tabella complessiva dei dati sperimentali (con le relat
 
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Gradi [$^\circ$]} & \textbf{$y$ [u.a.]} & \textbf{$\sigma_y$ [u.a.]} & \textbf{$\chi_i^2$} \\
+\textbf{Gradi [$^\circ$]} & \textbf{$I_i$ [u.a.]} & \textbf{$\sigma_{I_i}$ [u.a.]} & \textbf{$\chi_i^2$} \\
 \hline
 180 & $8.37\cdot 10^{11}$ & $4.18\cdot 10^{10}$ & 0.1 \\
 \hline
@@ -514,7 +509,7 @@ L’incertezza su ogni misura è stata stimata combinando in quadratura tre cont
 5\% attribuita alle fluttuazioni dell’intensità del laser.
 
 \begin{equation}
-\sigma_{y_i} = \sqrt{ \sigma_{\mathrm{pos}}^2 + \sigma_{\mathrm{fondo}}^2 + \left(0.05\, y_i\right)^2 } \, .
+\sigma_{I_i} = \sqrt{ \sigma_{\mathrm{pos}}^2 + \sigma_{\mathrm{fondo}}^2 + \left(0.05\, I_i\right)^2 } \, .
 \end{equation}
 
 
@@ -556,7 +551,7 @@ Dato che $\chi^2_{tot} > \chi^2_{soglia}$ l'ipotesi iniziale non è verificata, 
 
 
 
-\section{Verifica costanza dell'intensità per polarizzazione circolare}
+\section{Verifica costanza intensità per polarizzazione circolare}
 
 \subsection{Apparato sperimentale}
 
@@ -569,7 +564,7 @@ Dato che $\chi^2_{tot} > \chi^2_{soglia}$ l'ipotesi iniziale non è verificata, 
 
 In questa sezione si fa utilizzo della proprietà della lamina $\lambda/4$ di produrre polarizzazione circolare solo se il fascio incidente è linearmente polarizzato e l'asse della lamina è orientato a $45^\circ$ rispetto alla direzione di polarizzazione; inoltre l'effetto è corretto solo alla lunghezza d'onda per cui la lamina è progettata.
  Si posiziona P1 nel punto di massima intensità luminosa, per poi posizionare davanti la lamina, con angolazione pari a quella ricavata per $\lambda/2$ al punto 3. Se la luce fosse polarizzata in modo circolare, ci aspetteremmo, in accordo con la legge di Malus, che l'intensità luminosa non cambiasse al variare dell'angolo a cui si pone l'analizzatore P2. \\
-Durante le giornate di laboratorio si sono presi diversi set di dati grezzi \footnote{https://url-shortener.me/4VKS}, anche variando leggermente l'angolo del polarizzatore P1. Di seguito l'analisi verrà condotta con i dati ottenuti dalla posizione di massima intensità ricavata precedentemente al punto 3: $$ x_v = (241.3 \, \pm \, 1.3 )^{\circ} $$ 
+Durante le giornate di laboratorio si sono presi diversi set di dati grezzi \footnote{https://url-shortener.me/4VKS}, anche variando leggermente l'angolo del polarizzatore P1. Di seguito l'analisi verrà condotta con i dati ottenuti dalla posizione di massima intensità ricavata precedentemente al punto 3: $$ x_{\mathrm{P1}} = (241.3 \, \pm \, 1.3 )^{\circ} $$ 
 
 \subsection{Test $\chi^2$}
 
@@ -591,7 +586,7 @@ Di seguito si riportano i dati privi della correzione media del fondo e l'incert
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Angolo [$^\circ$]} & \textbf{$y$ [u.a.]} & \textbf{$\sigma_y$ [u.a.]} & \textbf{Var. perc. [\%]} & \textbf{$\chi_i^2$ } \\
+\textbf{Angolo [$^\circ$]} & \textbf{$I_i$ [u.a.]} & \textbf{$\sigma_{I_i}$ [u.a.]} & \textbf{Var. perc. [\%]} & \textbf{$\chi_i^2$ } \\
 \hline
 0   & $1.1\cdot 10^{7}$ & $6.3\cdot 10^{5}$ & $-1.5$ & $0.07$ \\
 \hline
@@ -638,7 +633,7 @@ Dato che $\chi^2_{tot} < \chi^2_{soglia}$ si conclude che il test del $\chi^2$ n
 \subsection{Test $F$: confronto tra modelli}
 
 \paragraph{Ipotesi del test $F$.}
-L'ipotesi nulla, ovvero che i dati siano compatibili con la retta media costante è accettata. Tuttavia questo non permette di escludere che altre leggi modellino meglio i nostri dati. Si è perciò usato il test F per verificare quanto un fit del tipo $I = C + A\cos^2(\theta - \theta_0)$ migliori o meno significativamente il fit. Si così confrontano due modelli \emph{annidati} applicati agli stessi dati:
+L'ipotesi nulla, ovvero che i dati siano compatibili con la retta media costante è accettata. Si è perciò usato il test F per verificare quanto un fit del tipo $I = C + A\cos^2(\theta - \theta_0)$ migliori o meno significativamente il fit. Si così confrontano due modelli \emph{annidati} applicati agli stessi dati:
 \begin{itemize}
     \item Modello ridotto $M_0$: intensità costante (nessuna dipendenza angolare);
     \item Modello completo $M_1$: andamento sinusoidale (dipendenza angolare).
@@ -723,7 +718,7 @@ Ne consegue che l'intensità non è compatibile con un andamento costante al var
 
 \section{Analisi della diffrazione e stima del diametro della fenditura}
 
-Si riporta di seguito uno schema per l'apparato sperimentale usato in questa sezione:
+\subsection{Apparato sperimentale}
 
 \begin{figure} [H]
     \centering
@@ -741,7 +736,7 @@ Si riportano eventuali lamine e la loro angolazione, rispetto alla verticale, co
 \item Polarizzazione orizzontale - lamina $\lambda/2$ a 39°50'
 \end{itemize}
 
-Nel caso di diffrazione di Fraunhofer ($L>>a^2/\lambda$) e trattando con angoli piccoli ($tan\theta\textasciitilde sen\theta \textasciitilde \theta$) si può utilizzare la seguente formula per calcolare l'ampiezza della fenditura tramite il calcolo della distanza dei minimi di diffrazione dal massimo centrale: 
+Nel caso di diffrazione di Fraunhofer ($L>>a^{2} / \lambda$) e trattando con angoli piccoli ($\tan \theta \sim \sin \theta \sim \theta$) si può utilizzare la seguente formula per calcolare l'ampiezza della fenditura tramite il calcolo della distanza dei minimi di diffrazione dal massimo centrale: 
 
 $$asen\theta=m\lambda$$
 
@@ -749,10 +744,250 @@ che diventa
 
 $$a=\frac{m\lambda L}{d}$$
 
-Il valore di L, la distanza della fenditura dallo schermo, si è ottenuta misurando la distanza tra i paletti e sommando metà del supporto della fenditura e la distanza tra il centro del paletto e il sensore della camera: 
+Il valore di L, che rappresenta la distanza della fenditura dallo schermo, si è ottenuta misurando la distanza tra i paletti e sommando metà del supporto della fenditura e la distanza tra il centro del paletto e il sensore della camera. L'incertezza si è invece ricavata tramite la formula di propagazione degli errori casuali di costruzione, forniti dal costruttore. Si trova quindi il seguente risultato:
 
-$$L=(633.1\pm0.2)mm$$
+$$L=(633.1\pm2.5) \, \mathrm{mm}$$ 
 
+Il valore usato per la lunghezza d'onda $\lambda$, secondo dati di costruzione, includendo fluttuazioni casuali risulta essere 
+
+$$\lambda=(6.35\pm0.03)\cdot10^{-4} \,\mathrm{mm}$$
+
+Si procede quindi all'analisi dei valori sperimentali dei $d$, le distanze dai vari minimi $m$ ($m=1,2,3,...$) dal massimo centrale. 
+
+\subsection{Analisi delle distanze d}
+
+Si riportano i risultati derivanti dalle figure di diffrazione ricavate per ciascun tipo di polarizzazione precedentemente citato.
+Per ciascuna acquisizione, tramite la funzione \texttt{RawIntDen} si può ricavare un grafico che associa un'intensità a una scala fissa per il sensore. La scala impostata non rappresenta necessariamente la lunghezza ideale, si è quindi impostato la lunghezza della parte sensibile del grafico (inizialmente $11,19 inches$) uguale alla lunghezza reale del sensore ($4.968 mm$). 
+Affinché si possano stimare i valori dei $d$, si interpolano tramite fit quadratico i picchi (un massimo centrale e 3 minimi a destra e a sinistra per ciascuna immagine) e si misura la posizione del vertice di ciascuna parabola. 
+Si associa alla posizione di ciascun massimo o minimo l'incertezza ricavata dalla propagazione degli errori sui parametri di fit, trovati tramite il metodo della massima verosimiglianza. Gli errori sono stati riscalati tenendo conto della proporzionalità tra le due scale. 
+
+Vengono riportate di seguito le misure appena citate e il grafico annesso per ciascuna polarizzazione. 
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{NoPolMinimi.png}
+\caption{Picchi figura diffrazione polarizzazione obliqua}
+\end{minipage}
+\hfill 
+\begin{minipage}{0.48\textwidth}
+\centering
+\setlength{\tabcolsep}{4pt} 
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & $d_v(inch)$ & $\sigma_v(inch)$ & $d_v(mm)$ & $\sigma_v (mm)$ \\ \hline
+Max & 6.3007 & 0.0009 & 2.7979 & 0.0004 \\ \hline
+Min Sx & 2.854  & 0.006  & 1.267  & 0.002  \\ \hline
+Min Sx & 3.694  & 0.004  & 1.640  & 0.002  \\ \hline
+Min Sx & 4.546  & 0.003  & 2.019  & 0.002  \\ \hline
+Min Dx & 8.10   & 0.01   & 3.60   & 0.004  \\ \hline
+Min Dx & 8.900  & 0.006  & 3.952  & 0.003  \\ \hline
+Min Dx & 9.79   & 0.01   & 4.348  & 0.005  \\ \hline
+\end{tabular}%
+}
+\captionof{table}{Riassunto distanze dei picchi}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{PolCircolareMinimi.png}
+\caption{Picchi figura diffrazione polarizzazione circolare}
+\end{minipage}
+\hfill 
+\begin{minipage}{0.48\textwidth}
+\centering
+\setlength{\tabcolsep}{4pt} 
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & $d_v(inch)$ & $\sigma_v(inch)$ & $d_v(mm)$ & $\sigma_v (mm)$ \\ \hline
+Max    & 6.2948 & 0.0009 & 2.7954 & 0.0004 \\ \hline
+Min Sx & 2.851  & 0.008  & 1.266  & 0.004  \\\hline
+Min Sx & 3.691  & 0.007  & 1.639  & 0.003  \\\hline
+Min Sx & 4.545  & 0.004  & 2.018  & 0.002  \\\hline
+Min Dx & 8.101  & 0.008  & 3.597  & 0.003  \\\hline
+Min Dx & 8.898  & 0.006  & 3.951  & 0.003  \\\hline
+Min Dx & 9.77   & 0.01   & 4.340  & 0.005  \\\hline
+\end{tabular}%
+}
+\captionof{table}{Riassunto distanze dei picchi}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{PolVerticaleMinimi.png}
+\caption{Picchi figura diffrazione polarizzazione verticale}
+\end{minipage}
+\hfill 
+\begin{minipage}{0.48\textwidth}
+\centering
+\setlength{\tabcolsep}{4pt} 
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+& $d_v(inch)$ & $\sigma_v(inch)$ & $d_v(mm)$ & $\sigma_v (mm)$ \\ \hline
+Max    & 6.309  & 0.001  & 2.8018 & 0.0005 \\ \hline
+Min Sx & 2.869  & 0.007  & 1.274  & 0.003  \\\hline
+Min Sx & 3.717  & 0.004  & 1.651  & 0.002  \\\hline
+Min Sx & 4.565  & 0.003  & 2.027  & 0.001  \\\hline
+Min Dx & 8.108  & 0.009  & 3.600  & 0.004  \\\hline
+Min Dx & 8.887  & 0.007  & 3.947  & 0.003  \\\hline
+Min Dx & 9.78   & 0.02   & 4.344  & 0.007  \\\hline
+\end{tabular}%
+}
+\captionof{table}{Riassunto distanze dei picchi}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{PolOrizzontaleMinimi.png}
+\caption{Picchi figura diffrazione polarizzazione orizzontale}
+\end{minipage}
+\hfill 
+\begin{minipage}{0.48\textwidth}
+\centering
+\setlength{\tabcolsep}{4pt} 
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+& $d_v(inch)$ & $\sigma_v(inch)$ & $d_v(mm)$ & $\sigma_v (mm)$ \\ \hline
+Max    & 6.319  & 0.001 & 2.8061 & 0.0005 \\ \hline
+Min Sx & 2.887  & 0.006 & 1.282  & 0.003  \\\hline
+Min Sx & 3.729  & 0.005 & 1.656  & 0.002  \\\hline
+Min Sx & 4.575  & 0.004 & 2.031  & 0.002  \\\hline
+Min Dx & 8.110  & 0.007 & 3.601  & 0.003  \\\hline
+Min Dx & 8.903  & 0.006 & 3.953  & 0.003  \\\hline
+Min Dx & 9.78   & 0.02  & 4.341  & 0.009  \\\hline
+\end{tabular}%
+}
+\captionof{table}{Riassunto distanze dei picchi}
+\label{tab:fit_cosn_risultati}
+\end{minipage}
+\end{figure}
+
+Vengono quindi ricavate le distanze relative tra il massimo e il m-esimo minimo per valore assoluto della differenza e infine si trovano le stime della larghezza della fenditura $a$ per ciascun minimo, e si riporta per ciascun tipo di polarizzazione la media e l'incertezza pesata. In tutti i passaggi intermedi vengono propagati gli errori sulle formule. 
+
+\begin{table}[h]
+\centering
+% Tabella 1
+\begin{minipage}{0.48\textwidth}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$n^\circ$ min & $d$ (mm) & $\sigma_d$ (mm) & $a$ (mm) & $\sigma_a$ (mm) \\ \hline
+4 & 1.531 & 0.002 & 1.051 & 0.007 \\ \hline
+3 & 1.158 & 0.002 & 1.042 & 0.007 \\ \hline
+2 & 0.779 & 0.002 & 1.032 & 0.007 \\ \hline
+2 & 0.800 & 0.004 & 1.005 & 0.008 \\ \hline
+3 & 1.154 & 0.003 & 1.045 & 0.007 \\ \hline
+4 & 1.550 & 0.005 & 1.038 & 0.007 \\ \hline
+\end{tabular}%
+}
+\caption{Risultati intermedi polarizzazione obliqua}
+\end{minipage}
+\hfill
+% Tabella 2
+\begin{minipage}{0.48\textwidth}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$n^\circ$ min & $d$ (mm) & $\sigma_d$ (mm) & $a$ (mm) & $\sigma_a$ (mm) \\ \hline
+4 & 1.529 & 0.004 & 1.052 & 0.007 \\ \hline
+3 & 1.156 & 0.003 & 1.043 & 0.007 \\ \hline
+2 & 0.777 & 0.002 & 1.035 & 0.007 \\ \hline
+2 & 0.802 & 0.004 & 1.002 & 0.008 \\ \hline
+3 & 1.156 & 0.003 & 1.043 & 0.007 \\ \hline
+4 & 1.545 & 0.005 & 1.041 & 0.007 \\ \hline
+\end{tabular}%
+}
+\caption{Risultati intermedi polarizzazione circolare}
+\end{minipage}
+\end{table}
+
+\begin{table}[H]
+\centering
+% Tabella 3
+\begin{minipage}{0.48\textwidth}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$n^\circ$ min & $d$ (mm) & $\sigma_d$ (mm) & $a$ (mm) & $\sigma_a$ (mm) \\ \hline
+4 & 1.528 & 0.003 & 1.053 & 0.007 \\ \hline
+3 & 1.151 & 0.002 & 1.048 & 0.007 \\ \hline
+2 & 0.775 & 0.002 & 1.038 & 0.007 \\ \hline
+2 & 0.799 & 0.004 & 1.007 & 0.008 \\ \hline
+3 & 1.145 & 0.003 & 1.054 & 0.007 \\ \hline
+4 & 1.543 & 0.007 & 1.042 & 0.008 \\ \hline
+\end{tabular}%
+}
+\caption{Risultati intermedi polarizzazione verticale}
+\end{minipage}
+\hfill
+% Tabella 4
+\begin{minipage}{0.48\textwidth}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$n^\circ$ min & $d$ (mm) & $\sigma_d$ (mm) & $a$ (mm) & $\sigma_a$ (mm) \\ \hline
+4 & 1.524 & 0.003 & 1.055 & 0.007 \\ \hline
+3 & 1.150 & 0.002 & 1.049 & 0.007 \\ \hline
+2 & 0.775 & 0.002 & 1.038 & 0.007 \\ \hline
+2 & 0.795 & 0.003 & 1.011 & 0.007 \\ \hline
+3 & 1.147 & 0.003 & 1.051 & 0.007 \\ \hline
+4 & 1.535 & 0.009 & 1.047 & 0.009 \\ \hline
+\end{tabular}%
+}
+\caption{Risultati intermedi polarizzazione orizzontale}
+\end{minipage}
+\end{table}
+
+Si riportano in seguito le singole stime del diametro della fenditura per ciascun tipo di polarizzazione, ottenute come media pesata della stima per i singoli minimi.
+
+\begin{table}[H]
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{|c|c|c|}\hline
+     \textbf{Polarizzazione}    &  $\bar{a}$ & $\sigma_{\bar{a}}$\\ \hline
+     \textbf{Obliqua} & 1.034 & 0.007 \\ \hline
+     \textbf{Circolare} & 1.036 & 0.007 \\ \hline
+     \textbf{Verticale} & 1.039 & 0.007 \\ \hline
+     \textbf{Orizzontale} & 1.042 & 0.007 \\ \hline
+    \end{tabular}
+    \caption{Risultati finali diametri}
+    \label{tab:placeholder}
+\end{table}
+
+Per verificare l'indipendenza della stima del diametro $a$ dallo stato di polarizzazione della luce incidente, è stato eseguito un test di consistenza globale calcolando il $\chi^2_{tot}$ degli scarti delle varie medie dalla media pesata totale $a_{tot}$ che risulta essere 
+
+$$a_{tot}=(1.038\pm0.007) \, \mathrm{mm}$$
+
+Il valore ottenuto $\chi^2_{tot}$ = 0.77 è molto minore del valore critico $\chi^2_{crit} = 7.81$ a $\nu=N-1=3$ gradi di libertà. Ciò conferma che le quattro stime di $a$ sono statisticamente consistenti tra loro, concludendo che la polarizzazione non influenza la posizione dei minimi di diffrazione.
 
 
 
